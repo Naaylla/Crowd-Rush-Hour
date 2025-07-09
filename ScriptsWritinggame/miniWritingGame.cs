@@ -7,7 +7,7 @@ public class TextCompletionGame : MonoBehaviour
     [SerializeField] TMP_Text uiText;
     [SerializeField] string fullText = "Unity est puissant et flexible";
     [SerializeField] Vector2Int[] hiddenWordRanges = { new Vector2Int(6, 20) }; // exemple : "puissant"
-    [NonSerialized] float timeLimit = 5f;
+    [SerializeField] float timeLimit = 30f;
 
     string displayText;
     float timer;
@@ -16,6 +16,7 @@ public class TextCompletionGame : MonoBehaviour
 
     void Start()
     {
+
         timer = timeLimit;
         // Prépare currentChars
         currentChars = fullText.ToCharArray();
@@ -88,7 +89,7 @@ public class TextCompletionGame : MonoBehaviour
 
     void EndGame(bool win)
     {
-        uiText.text = win ? "Gagné !" : "Temps écoulé !";
+        uiText.text = win ? "Win" : "Lose";
         enabled = false;
     }
 }

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public float currentGameSatisfaction = 100f;
     public string playedActivite;
 
+    public string[] Hobbies = { "music", "cooking", "painting", "writing"};
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
