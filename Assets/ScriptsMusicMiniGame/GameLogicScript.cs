@@ -18,7 +18,7 @@ public class GameLogicScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("return to normal scene");
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
         }
 
         

@@ -18,7 +18,7 @@ public class WriteGameManager : MonoBehaviour
         {
             Debug.Log("return to normal scene");
             GameManager.instance.scoreMiniGame = 5;
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
         }
         if (uiText.text == "Win")
         {

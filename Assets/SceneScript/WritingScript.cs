@@ -16,7 +16,7 @@ public class WritingScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("miniGameWriting");
         }
     }
 }

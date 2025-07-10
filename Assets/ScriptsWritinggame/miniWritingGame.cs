@@ -58,7 +58,7 @@ public class TextCompletionGame : MonoBehaviour
         if (timer <= 0f)
         {
             EndGame(false);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
             return;
         }
 
@@ -101,6 +101,6 @@ public class TextCompletionGame : MonoBehaviour
     {
         uiText.text = win ? "Win" : "Lose";
         enabled = false;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
 }
