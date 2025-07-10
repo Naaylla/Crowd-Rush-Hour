@@ -13,7 +13,7 @@ public class CrowdScript : MonoBehaviour
     public GameObject[] spectatorPrefab;
     public SpriteRenderer[] specPrefRendrer;
     [Tooltip("Positions où peuvent apparaître les spectateurs.")]
-    public Transform[] spawnPoints;
+    [SerializeField] Transform[] spawnPoints;
 
     [Tooltip("Valeur maximale de la jauge.")]
     public float maxSatisfaction = 100f;
@@ -52,30 +52,19 @@ public class CrowdScript : MonoBehaviour
         hatedHobbie = GameManager.instance.Hobbies[1];
 
         int randomNum;
-        float decalageX;
         
         
         for (int i = 0; i < spectatorCount; i++)
         {
+            Vector3 pos;
             randomNum = Random.Range(0, 3);
 
-            decalageX = Random.Range(-decRandX, decRandX);
-            startPosition.x += decalageX;
-            decalageX = Random.Range(-decRandX, decRandX);
-            startPosition2.x += decalageX;
+            pos = spawnPoints[i].position;
             // Calcul de la position : start + (i * spacing) vers la droite
-            Vector2 pos;
-            if (i < 6)
-            {   
-                pos = startPosition + Vector2.right * (i * spacingX);
-                specPrefRendrer[randomNum].sortingOrder = 0;
-            }
-            // Par exemple, les spectateurs de la première rangée ont un ordre plus élevé}
-            else
-            {
-                pos = startPosition2 + Vector2.right * (i * spacingX);
-                specPrefRendrer[randomNum].sortingOrder = 10;
-            }
+
+            specPrefRendrer[randomNum].sortingOrder = spectatorCount - i;
+
+                
 
             GameObject go = Instantiate(spectatorPrefab[randomNum], pos, Quaternion.identity, transform);
 

@@ -9,6 +9,8 @@ public class TextCompletionGame : MonoBehaviour
     [SerializeField] Vector2Int[] hiddenWordRanges = { new Vector2Int(6, 20) }; // exemple : "puissant"
     [SerializeField] float timeLimit = 30f;
 
+    [SerializeField] AudioSource tapingKey;
+
     string displayText;
     float timer;
     int revealIndex = 0;
@@ -35,7 +37,7 @@ public class TextCompletionGame : MonoBehaviour
         for (int i = 0; i < fullText.Length; i++)
         {
             if (currentChars[i] == '\0')
-                sb.Append("<color=#FFFFFF50>" + fullText[i] + "</color>");
+                sb.Append("<color=#99996650>" + fullText[i] + "</color>");
             else
                 sb.Append(fullText[i]);
         }
@@ -57,6 +59,7 @@ public class TextCompletionGame : MonoBehaviour
         foreach (char c in Input.inputString)
         {
             TryRevealLetter(c);
+            tapingKey.Play();
         }
     }
 
@@ -91,5 +94,6 @@ public class TextCompletionGame : MonoBehaviour
     {
         uiText.text = win ? "Win" : "Lose";
         enabled = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }
