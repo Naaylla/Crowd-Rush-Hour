@@ -6,6 +6,7 @@ TagManager:
   tags:
   - point
   - star
+  - dommageLocation
   layers:
   - Default
   - TransparentFX
