@@ -24,7 +24,7 @@ public class TextCompletionGame : MonoBehaviour
 
     void Start()
     {
-        int randNum = Random.Range(0, nbrOfSentences);
+        int randNum = UnityEngine.Random.Range(0, nbrOfSentences);
         fullText = AllPhrase[randNum];
         timer = timeLimit;
         // Prépare currentChars
