@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -6,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     public float speed = 20f;
     public int counter = 0;
     public AudioSource As;
+    public TMP_Text score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -54,8 +56,8 @@ public class PlayerScript : MonoBehaviour
         {
             Debug.Log("problemo no instance detectedissimo");
         }
-
-
+       
+        score.text = counter.ToString();
     }
 
 }
