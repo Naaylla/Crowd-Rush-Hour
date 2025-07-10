@@ -1,13 +1,15 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public int scoreMiniGame = 0;
-    public bool hadBeenDiverted = false;
+    [NonSerialized] public int scoreMiniGame = 0;
+    [NonSerialized] public bool hadBeenDiverted = false;
     public float currentGameSatisfaction = 100f;
-    public string playedActivite;
+    [NonSerialized] public string playedActivite;
+    [NonSerialized] public float timeRemain = 60f;
 
     public string[] Hobbies = { "music", "cooking", "painting", "writing"};
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine;
+
 
 public class TextCompletionGame : MonoBehaviour
 {

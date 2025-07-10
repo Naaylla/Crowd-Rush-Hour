@@ -5,6 +5,7 @@ public class PlayerScript : MonoBehaviour
     private bool isColliding = false;
     public float speed = 20f;
     public int counter = 0;
+    public AudioSource As;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,6 +41,7 @@ public class PlayerScript : MonoBehaviour
         {
 
             counter++;
+            As.Play();
             Debug.Log(counter);
 
         }
@@ -50,7 +52,7 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("niga bro");
+            Debug.Log("problemo no instance detectedissimo");
         }
 
 
