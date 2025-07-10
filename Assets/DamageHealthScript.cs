@@ -16,6 +16,13 @@ public class DamageHealthScript : MonoBehaviour
         DrawHearts();
     }
 
+    void Update()
+    {
+        if (pv <= 0)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        }    
+    }
     void DrawHearts()
     {
         // Clean existing hearts
@@ -39,5 +46,14 @@ public class DamageHealthScript : MonoBehaviour
         pv -= amount;
         pv = Mathf.Max(pv, 0); // Prevent negative values
         DrawHearts();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("point"))
+        {
+            TakeDamage(1);
+        }
+
     }
 }

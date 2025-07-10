@@ -11,12 +11,10 @@ public class PointsMovingScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("star")) Debug.Log("Colided");
-        isColliding = true;
+        if (collision.CompareTag("star")) isColliding = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("exited");
         isColliding = false;
     }
     // Update is called once per frame
