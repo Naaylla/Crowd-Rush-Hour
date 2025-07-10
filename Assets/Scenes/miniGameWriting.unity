@@ -963,7 +963,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 121183741}
-  fullText: Unity est puissant et flexible
+  AllPhrase:
+  - 90% of studying is staring at the same page and hoping it makes sense.
+  - Game devs fix one bug and spawn three more.
+  - Did you know that studying at USTHB is a foretaste of war?
   hiddenWordRanges:
   - {x: 6, y: 20}
   timeLimit: 30

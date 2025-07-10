@@ -11,7 +11,7 @@ public class TextCompletionGame : MonoBehaviour
     "Game devs fix one bug and spawn three more.",
     "Did you know that studying at USTHB is a foretaste of war?",
     };
-    [SerializeField] string fullText;
+    [NonSerialized] string fullText;
     [SerializeField] Vector2Int[] hiddenWordRanges = { new Vector2Int(6, 20) }; // exemple : "puissant"
     [SerializeField] float timeLimit = 30f;
 
