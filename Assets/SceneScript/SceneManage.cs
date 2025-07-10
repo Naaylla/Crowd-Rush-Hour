@@ -15,13 +15,13 @@ public class SceneManage : MonoBehaviour
         {
             Debug.Log("Tentative de chargement de la scène Music");
             // Charge par nom si l'index pose problème
-            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MiniGameMusic");
         }
         if (keyboard.oKey.isPressed)
         {
             Debug.Log("Tentative de chargement de la scène Writing...");
             // Charge par nom si l'index pose problème
-            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("miniGameWriting");
         }
     }
 }
