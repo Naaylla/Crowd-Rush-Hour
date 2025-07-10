@@ -12,7 +12,8 @@ public class TimerScript : MonoBehaviour
     private float timeSinceLastSound = 0f;    // Temps depuis le dernier son joué
 
     void Start()
-    {   
+    {
+        timeRemaining = GameManager.instance.timeRemain;
         DisplayTime(timeRemaining);
     }
 
@@ -30,7 +31,7 @@ public class TimerScript : MonoBehaviour
                     audioSource.Play(); // Joue le son
                     timeSinceLastSound = 0f;
                 }
-
+                GameManager.instance.timeRemain = timeRemaining;
                 DisplayTime(timeRemaining);
             }
             else

@@ -19,7 +19,6 @@ public class AudioPitchAnalyser : MonoBehaviour
     private float minY = -maxHeight; 
     private float maxY;
 
-
     
     void Start()
     {
@@ -39,6 +38,7 @@ public class AudioPitchAnalyser : MonoBehaviour
             currentNoteIndex++;
         }
     }
+    
 
     void SpawnNoteBasedOnPitch()
     {
@@ -69,5 +69,10 @@ public class AudioPitchAnalyser : MonoBehaviour
         // Spawn la note
         Vector3 notePos = new Vector3(currentNoteIndex * 1.5f, yPos, 0);
         Instantiate(notePrefab, notePos, Quaternion.identity);
+    }
+
+    public void DeleteObject()
+    {
+        Destroy(gameObject);
     }
 }
