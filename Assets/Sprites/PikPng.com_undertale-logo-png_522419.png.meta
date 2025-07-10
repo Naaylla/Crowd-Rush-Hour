@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PikPng.com_undertale-logo-png_522419_0: -3145315147033143512
+      PikPng.com_undertale-logo-png_522419_1: -3530433838473136321
+      PikPng.com_undertale-logo-png_522419_2: 7849036114637423669
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
