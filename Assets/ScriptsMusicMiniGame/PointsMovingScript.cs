@@ -12,6 +12,7 @@ public class PointsMovingScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("star")) isColliding = true;
+        if (collision.CompareTag("counter")) Debug.Log("conté");
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

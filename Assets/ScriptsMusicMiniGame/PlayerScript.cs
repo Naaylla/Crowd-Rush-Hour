@@ -16,13 +16,13 @@ public class PlayerScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("point")) Debug.Log("Colided");
-        isColliding = true;
+        if (collision.CompareTag("point")) isColliding = true; 
+        
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("exited");
-        isColliding = false;
+        if (collision.CompareTag("point")) isColliding = false;
+
     }
 
     // Update is called once per frame

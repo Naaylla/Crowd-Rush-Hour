@@ -38,9 +38,8 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator LoadLevel()
     {
-        transitionAnimator.SetTrigger("End");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+1);
         transitionAnimator.SetTrigger("Start");
     }
+    
 }

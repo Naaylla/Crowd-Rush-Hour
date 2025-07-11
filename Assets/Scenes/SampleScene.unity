@@ -4465,7 +4465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameSatisfaction: 100
-  transitionAnimator: {fileID: 0}
+  transitionAnimator: {fileID: 949115659}
   Hobbies:
   - music
   - cooking
