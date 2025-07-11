@@ -4,7 +4,8 @@ public class AudioPitchAnalyser : MonoBehaviour
 {
     const float maxHeight = 4.0f;
 
-    public AudioSource audioSource;
+    public AudioSource[] audioSources;
+    public AudioSource aS;
     public GameObject notePrefab;
     public int numberOfNotes = 10;
     public float noteSpacing = 0.5f;
@@ -24,6 +25,13 @@ public class AudioPitchAnalyser : MonoBehaviour
     {
         // Calcule la hauteur d'écran (pour caméra orthographique)
         maxY = maxHeight;
+        int num = 0;
+        if (GameManager.instance.selectedType == "jazz") num = 0;
+        if (GameManager.instance.selectedType == "rock") num = 1;
+        if (GameManager.instance.selectedType == "classic") num = 2;
+
+        aS = audioSources[num];
+        aS.Play();
     }
 
     void Update()
@@ -42,7 +50,9 @@ public class AudioPitchAnalyser : MonoBehaviour
 
     void SpawnNoteBasedOnPitch()
     {
-        audioSource.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
+
+
+        aS.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
 
         // Trouve la fréquence dominante
         float maxFreq = 0f;
