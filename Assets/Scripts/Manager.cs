@@ -1,21 +1,31 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 
 public class Manager : MonoBehaviour
 {
     public GameObject[] Levels;
-    
-    int CurrentLevel;
+    public TMP_Text feedbackText;
+    public float feedbackDuration = 1.5f;
+
+    int CurrentLevel = 0;
 
     public void correctAnswer()
-    {
-        if(CurrentLevel + 1 != Levels.Length) 
-        {
-            Levels[CurrentLevel].SetActive(false);
-            CurrentLevel++;
-            Levels[CurrentLevel].SetActive(true);
-        }
+{
+    UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+}
 
+
+    public void wrongAnswer()
+    {
+        StartCoroutine(ShowWrongAnswer());
+    }
+
+    IEnumerator ShowWrongAnswer()
+    {
+        feedbackText.text = "WRONG ANSWER -10";
+        feedbackText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(feedbackDuration);
+        feedbackText.gameObject.SetActive(false);
     }
 }
