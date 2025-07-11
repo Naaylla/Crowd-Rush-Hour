@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public bool hadBeenDiverted = false;
     public float currentGameSatisfaction = 100f;
     [NonSerialized] public string playedActivite;
-    [NonSerialized] public float timeRemain = 60f;
+    [NonSerialized] public float timeRemain = 30f;
+    [NonSerialized] public string selectedType;
 
     [SerializeField] Animator transitionAnimator;
 

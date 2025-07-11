@@ -1,6 +1,7 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CounterDeFinScript : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class CounterDeFinScript : MonoBehaviour
             canva.SetActive(true);
             AffichageTheEnd();
             StartCoroutine(WaitAndDoSomething(20f));
-            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("SampleScene");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

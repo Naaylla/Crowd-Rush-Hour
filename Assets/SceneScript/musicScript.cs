@@ -16,7 +16,7 @@ public class musicScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MiniGameMusic");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MusicIntervelScene");
         }
     }
 }

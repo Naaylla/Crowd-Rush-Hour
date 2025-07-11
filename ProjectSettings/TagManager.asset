@@ -8,6 +8,9 @@ TagManager:
   - star
   - dommageLocation
   - counter
+  - jazz
+  - rock
+  - classic
   layers:
   - Default
   - TransparentFX

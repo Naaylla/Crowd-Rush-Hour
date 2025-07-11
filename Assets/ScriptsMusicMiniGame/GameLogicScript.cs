@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLogicScript : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class GameLogicScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("return to normal scene");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("SampleScene");
         }
 
         

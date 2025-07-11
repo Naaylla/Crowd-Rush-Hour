@@ -17,7 +17,7 @@ public class MicScrpit : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("quizz");
         }
     }
 }
