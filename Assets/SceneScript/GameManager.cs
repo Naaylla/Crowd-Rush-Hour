@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class GameManager : MonoBehaviour
     public float currentGameSatisfaction = 100f;
     [NonSerialized] public string playedActivite;
     [NonSerialized] public float timeRemain = 60f;
+
+    [SerializeField] Animator transitionAnimator;
 
     public string[] Hobbies = { "music", "cooking", "painting", "writing"};
 
@@ -26,4 +30,16 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    
+    public void NextLevel()
+    {
+        StartCoroutine(LoadLevel());
+    }
+    IEnumerator LoadLevel()
+    {
+        yield return new WaitForSeconds(1);
+        transitionAnimator.SetTrigger("Start");
+    }
+    
 }

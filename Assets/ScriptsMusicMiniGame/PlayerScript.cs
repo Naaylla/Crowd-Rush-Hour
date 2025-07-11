@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -6,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     public float speed = 20f;
     public int counter = 0;
     public AudioSource As;
+    public TMP_Text score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,13 +16,13 @@ public class PlayerScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("point")) Debug.Log("Colided");
-        isColliding = true;
+        if (collision.CompareTag("point")) isColliding = true; 
+        
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("exited");
-        isColliding = false;
+        if (collision.CompareTag("point")) isColliding = false;
+
     }
 
     // Update is called once per frame
@@ -54,8 +56,8 @@ public class PlayerScript : MonoBehaviour
         {
             Debug.Log("problemo no instance detectedissimo");
         }
-
-
+       
+        score.text = counter.ToString();
     }
 
 }
