@@ -5,7 +5,7 @@ public class AudioPitchAnalyser : MonoBehaviour
     const float maxHeight = 4.0f;
 
     public AudioSource[] audioSources;
-    public AudioSource aS;
+    private AudioSource aS;
     public GameObject notePrefab;
     public int numberOfNotes = 10;
     public float noteSpacing = 0.5f;
@@ -51,31 +51,7 @@ public class AudioPitchAnalyser : MonoBehaviour
     void SpawnNoteBasedOnPitch()
     {
 
-
-        aS.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
-
-        // Trouve la fréquence dominante
-        float maxFreq = 0f;
-        int maxIndex = 0;
-        for (int i = 0; i < spectrum.Length; i++)
-        {
-            if (spectrum[i] > maxFreq)
-            {
-                maxFreq = spectrum[i];
-                maxIndex = i;
-            }
-        }
-        float dominantFreq = maxIndex * AudioSettings.outputSampleRate / 2 / spectrum.Length;
-
-        // Normalise et map vers la position Y
-        float clampedFreq = Mathf.Clamp(dominantFreq, minFreq, maxFreq);
-        float normalizedPitch = (clampedFreq - minFreq) / (maxFreq - minFreq);
-        float yPos = Mathf.Lerp(minY, maxY, normalizedPitch);
-
-        // Lissage (optionnel)
-        yPos = Mathf.Lerp(lastYPos, yPos, 0.3f);
-        lastYPos = yPos;
-
+        float yPos = Random.Range(-4.13f, 4.13f);
         // Spawn la note
         Vector3 notePos = new Vector3(currentNoteIndex * 1.5f, yPos, 0);
         Instantiate(notePrefab, notePos, Quaternion.identity);

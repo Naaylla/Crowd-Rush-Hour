@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
 
     public string[] Hobbies = { "music", "cooking", "painting", "writing"};
 
+    private string lovedHobbie;
+    private string hatedHobbie;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -27,6 +30,17 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            int lovdHobbieIndex = UnityEngine.Random.Range(0, 3);
+            int hatdHobbieIndex = UnityEngine.Random.Range(0, 3);
+            while (lovdHobbieIndex == hatdHobbieIndex)
+            {
+                hatdHobbieIndex = UnityEngine.Random.Range(0, 3);
+            }
+
+            lovedHobbie = Hobbies[lovdHobbieIndex];
+            hatedHobbie = Hobbies[hatdHobbieIndex];
+
         }
         else
         {
@@ -47,6 +61,7 @@ public class GameManager : MonoBehaviour
             timeRemain -= Time.deltaTime;
             timeRemain = Mathf.Clamp(timeRemain, 0f, 999f); // met une limite haute si besoin
         }
+
     }
 
     public void NextLevel()

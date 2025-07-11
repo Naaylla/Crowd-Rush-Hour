@@ -4544,7 +4544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56227060e72a5e468e0df363ca72afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeImpactMultiplication: 3.2
+  timeImpactMultiplication: 2.5
   spectatorPrefab:
   - {fileID: 7472534669843222459, guid: 2f70681129720a44ca58306d5bfc6514, type: 3}
   - {fileID: 3229450368372048499, guid: 727a2de08f74db640a7eedff736351d1, type: 3}

@@ -35,7 +35,6 @@ public class CrowdScript : MonoBehaviour
 
     string lovedHobbie;
     string hatedHobbie;
-    const float decRandX = 0.4f;
     void Start()
     {
         currentSatisfaction = GameManager.instance.currentGameSatisfaction;
@@ -43,9 +42,16 @@ public class CrowdScript : MonoBehaviour
         diverted = GameManager.instance.hadBeenDiverted;
         Debug.Log(diverted);
 
-        // pour l'instant c'est moi qui decide la quelle est choisis
-        lovedHobbie = GameManager.instance.Hobbies[0];
-        hatedHobbie = GameManager.instance.Hobbies[1];
+        // Defintion du Hobbie aimer et detester
+        int lovdHobbie = Random.Range(0, 3);
+        int hatdHobbie = Random.Range(0,3);
+        while (lovdHobbie == hatdHobbie) {
+            hatdHobbie = Random.Range(0, 3);
+        }
+
+        
+        lovedHobbie = GameManager.instance.Hobbies[lovdHobbie];
+        hatedHobbie = GameManager.instance.Hobbies[hatdHobbie];
 
         int randomNum;
         
@@ -103,12 +109,12 @@ public class CrowdScript : MonoBehaviour
             }
             else
             {
-                currentSatisfaction += divertissement / 2;
+                currentSatisfaction += divertissement - (divertissement/3);
                 Debug.Log("i guess its okey ");
             }
 
 
-                Debug.Log("le public a etais divertie");
+            Debug.Log("le public a etais divertie");
             Debug.Log(currentSatisfaction);
             diverted = false;
 

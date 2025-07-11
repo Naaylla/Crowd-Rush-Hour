@@ -8,8 +8,6 @@ public class Manager : MonoBehaviour
     public TMP_Text feedbackText;
     public float feedbackDuration = 1.5f;
 
-    int CurrentLevel = 0;
-
     public void correctAnswer()
 {
     UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
