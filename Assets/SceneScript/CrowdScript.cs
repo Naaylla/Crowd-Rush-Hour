@@ -27,10 +27,6 @@ public class CrowdScript : MonoBehaviour
     [Header("Génération de la rangée")]
     [Tooltip("Nombre de spectateurs maximum")]
     public int spectatorCount = 12;
-    [Tooltip("Position du premier spectateur (coin gauche)")]
-
-    [SerializeField] Vector2 startPosition = new Vector2(-8f, 4f);
-    [SerializeField] Vector2 startPosition2 = new Vector2(-20f, 2.6f);
 
     [Tooltip("Distance entre chaque spectateur sur X")]
     public float spacingX = 1f;
@@ -63,8 +59,6 @@ public class CrowdScript : MonoBehaviour
             // Calcul de la position : start + (i * spacing) vers la droite
 
             specPrefRendrer[randomNum].sortingOrder = spectatorCount - i;
-
-                
 
             GameObject go = Instantiate(spectatorPrefab[randomNum], pos, Quaternion.identity, transform);
 

@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public float timeRemain = 30f;
     [NonSerialized] public string selectedType;
 
+    public float satisfactionDecreaseSpeed = 3.2f;
+
     [SerializeField] Animator transitionAnimator;
 
     public string[] Hobbies = { "music", "cooking", "painting", "writing"};
@@ -32,7 +34,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    private void Update()
+    {
+        if (currentGameSatisfaction > 0f)
+        {
+            currentGameSatisfaction -= Time.deltaTime * satisfactionDecreaseSpeed;
+            currentGameSatisfaction = Mathf.Clamp(currentGameSatisfaction, 0f, 100f);
+        }
+
+        if (timeRemain > 0f)
+        {
+            timeRemain -= Time.deltaTime;
+            timeRemain = Mathf.Clamp(timeRemain, 0f, 999f); // met une limite haute si besoin
+        }
+    }
+
     public void NextLevel()
     {
         StartCoroutine(LoadLevel());
