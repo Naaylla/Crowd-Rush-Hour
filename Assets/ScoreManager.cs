@@ -1,28 +1,39 @@
 using UnityEngine;
 using TMPro;
 
-public class ScoreManager : MonoBehaviour
+public class GameOverManager : MonoBehaviour
 {
-    public static int score = 0; // Static so it can be accessed globally
-    public TextMeshProUGUI scoreText;
+    public GameObject gameOverPanel;
+    public TMP_Text scoreText;
+    public TMP_Text messageText;
 
-    void Start()
+    private void Start()
     {
-        score = 0;
-        UpdateScoreText();
+        // Simulate a random score for testing
+        float randomScore = Random.Range(0f, 100f);
+        ShowGameOverScreen(randomScore);
     }
 
-    public void AddPoints(int points)
+    public void ShowGameOverScreen(float score)
     {
-        score += points;
-        UpdateScoreText();
-    }
+        gameOverPanel.SetActive(true);
+        scoreText.text = $"Your Satisfiability Score: {score:F1}%";
 
-    void UpdateScoreText()
-    {
-        if (scoreText != null)
+        if (score <= 0)
         {
-            scoreText.text = "Score: " + score;
+            messageText.text = "The crowd RIOTED !";
+        }
+        else if (score < 50)
+        {
+            messageText.text = "The crowd is... unimpressed ";
+        }
+        else if (score >= 80)
+        {
+            messageText.text = "The crowd ADORES you!";
+        }
+        else
+        {
+            messageText.text = "Not bad! Some cheers, some yawns ";
         }
     }
 }
