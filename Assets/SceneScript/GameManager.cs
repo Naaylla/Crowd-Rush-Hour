@@ -94,6 +94,24 @@ public class GameManager : MonoBehaviour
         transitionAnimator.SetTrigger("Start");
     }
 
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "SampleScene")
+        {
+            ResetGame();
+        }
+    }
+
     public void ResetGame()
     {
         scoreMiniGame = 0;
@@ -101,8 +119,14 @@ public class GameManager : MonoBehaviour
         hadBeenDiverted = false;
         currentGameSatisfaction = 100f;
         playedActivite = "";
-        timeRemain = 30f; // Valeur initiale du timer
         selectedType = "";
+
+        timeRemain = 30f;
+
+        // Ajoute cette ligne pour synchroniser le TimerScript
+        TimerScript timerScript = FindObjectOfType<TimerScript>();
+        if (timerScript != null)
+            timerScript.ResetTimer(timeRemain);
 
         // Réinitialiser les hobbies aléatoirement
         int lovdHobbieIndex = UnityEngine.Random.Range(0, Hobbies.Length);

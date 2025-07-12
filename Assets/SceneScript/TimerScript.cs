@@ -14,17 +14,13 @@ public class TimerScript : MonoBehaviour
     void Start()
     {
         timeRemaining = GameManager.instance.timeRemain;
+        timerIsRunning = true;
         DisplayTime(timeRemaining);
+        timeSinceLastSound = 0f;
     }
 
     void Update()
     {
-        if (GameManager.instance.isReseted)
-        {
-            
-            Debug.Log("time remaingigg rg  : " + timeRemaining);
-            timerIsRunning = true;
-        }
         
         if (timerIsRunning)
         {
@@ -58,5 +54,13 @@ public class TimerScript : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void ResetTimer(float newTime)
+    {
+        timeRemaining = newTime;
+        timerIsRunning = true;
+        DisplayTime(timeRemaining);
+        timeSinceLastSound = 0f;
     }
 }

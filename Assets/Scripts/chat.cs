@@ -11,7 +11,6 @@ public class FakeTwitchChat : MonoBehaviour
 
     private float currentSatis;
 
-    // Messages � d�finir
     private string[] positiveMsg = new string[]
     {
     "Someone play 'Fly Me to the Moon' or I’m leaving.",

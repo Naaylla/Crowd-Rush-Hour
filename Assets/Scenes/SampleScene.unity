@@ -3340,7 +3340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2b9865935a19f45ad2edc8335e8495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 45
+  timeRemaining: 5
   timerIsRunning: 1
   timeText: {fileID: 1149438424}
   audioSource: {fileID: 1149438427}
@@ -4990,7 +4990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameSatisfaction: 100
-  timeRemain: 4
+  timeRemain: 15
+  gameEnd: 0
   satisfactionDecreaseSpeed: 2.5
   transitionAnimator: {fileID: 949115659}
   Hobbies:
