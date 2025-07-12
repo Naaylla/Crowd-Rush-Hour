@@ -208,14 +208,14 @@ RectTransform:
   m_GameObject: {fileID: 108799272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.8073215, y: 4.2899404, z: 4.2899404}
+  m_LocalScale: {x: 3.0333312, y: 3.4178383, z: 3.4178383}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1533681238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: -4}
+  m_AnchoredPosition: {x: -25, y: -23}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &108799277
@@ -583,7 +583,6 @@ GameObject:
   - component: {fileID: 318526920}
   - component: {fileID: 318526922}
   - component: {fileID: 318526921}
-  - component: {fileID: 318526923}
   m_Layer: 5
   m_Name: Box
   m_TagString: Untagged
@@ -650,20 +649,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318526919}
   m_CullTransparentMesh: 1
---- !u!114 &318526923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318526919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e339354a7ee3541973e26f7986fd06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiElement: {fileID: 318526921}
-  duration: 2
 --- !u!1 &398085821
 GameObject:
   m_ObjectHideFlags: 0
