@@ -10,8 +10,7 @@ public class GameOverManager : MonoBehaviour
     private void Start()
     {
         // Simulate a random score for testing
-        float randomScore = Random.Range(0f, 100f);
-        ShowGameOverScreen(randomScore);
+        ShowGameOverScreen(GameManager.instance.currentGameSatisfaction);
     }
 
     public void ShowGameOverScreen(float score)

@@ -5,8 +5,8 @@ public class GameOverButtons : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene("dialogue");
 
+        SceneManager.LoadScene("dialogue");
     }
 
     public void GoToMainMenu()

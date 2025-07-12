@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float timeRemain = 10f;
     [NonSerialized] public string selectedType;
 
+    public bool gameEnd = false;
+
     public float satisfactionDecreaseSpeed = 3.2f;
 
     [SerializeField] Animator transitionAnimator;
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     public string lovedHobbie;
     public string hatedHobbie;
+
+    public bool isReseted = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -41,6 +45,8 @@ public class GameManager : MonoBehaviour
             lovedHobbie = Hobbies[lovdHobbieIndex];
             hatedHobbie = Hobbies[hatdHobbieIndex];
 
+
+
         }
         else
         {
@@ -50,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (currentGameSatisfaction > 0f)
+        if (currentGameSatisfaction > 0f )
         {
             currentGameSatisfaction -= Time.deltaTime * satisfactionDecreaseSpeed;
             currentGameSatisfaction = Mathf.Clamp(currentGameSatisfaction, 0f, 100f);
@@ -64,11 +70,17 @@ public class GameManager : MonoBehaviour
 
         if (timeRemain == 0)
         {
+
             SceneManager.LoadScene("GameOver");
         }
 
-        Debug.Log("lovedHobbie : " + lovedHobbie);
-        Debug.Log("hatedHobbie : " + hatedHobbie);
+        if (isReseted)
+        {
+            ResetGame();
+            Debug.Log(currentGameSatisfaction);
+            Debug.Log(timeRemain);
+
+        }
 
     }
 
@@ -81,5 +93,49 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         transitionAnimator.SetTrigger("Start");
     }
-    
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "SampleScene")
+        {
+            ResetGame();
+        }
+    }
+
+    public void ResetGame()
+    {
+        scoreMiniGame = 0;
+        gameEnd = false;
+        hadBeenDiverted = false;
+        currentGameSatisfaction = 100f;
+        playedActivite = "";
+        selectedType = "";
+
+        timeRemain = 30f;
+
+        // Ajoute cette ligne pour synchroniser le TimerScript
+        TimerScript timerScript = FindObjectOfType<TimerScript>();
+        if (timerScript != null)
+            timerScript.ResetTimer(timeRemain);
+
+        // Réinitialiser les hobbies aléatoirement
+        int lovdHobbieIndex = UnityEngine.Random.Range(0, Hobbies.Length);
+        int hatdHobbieIndex = UnityEngine.Random.Range(0, Hobbies.Length);
+        while (lovdHobbieIndex == hatdHobbieIndex)
+        {
+            hatdHobbieIndex = UnityEngine.Random.Range(0, Hobbies.Length);
+        }
+        lovedHobbie = Hobbies[lovdHobbieIndex];
+        hatedHobbie = Hobbies[hatdHobbieIndex];
+    }
 }
