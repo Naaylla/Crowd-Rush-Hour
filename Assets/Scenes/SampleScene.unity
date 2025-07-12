@@ -2001,6 +2001,7 @@ GameObject:
   - component: {fileID: 710053980}
   - component: {fileID: 710053983}
   - component: {fileID: 710053984}
+  - component: {fileID: 710053985}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -2053,7 +2054,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 5dad7bc284931784ba5906409fd26713, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2074,12 +2075,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2553362023053485597, guid: cd6204014cccd0f47ba94a02297389fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd6204014cccd0f47ba94a02297389fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.3, y: 6.42}
+  m_Size: {x: 8, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2138,8 +2139,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.3, y: 6.42}
-    newSize: {x: 7.3, y: 6.42}
+    oldSize: {x: 8, y: 8}
+    newSize: {x: 8, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -2161,6 +2162,18 @@ MonoBehaviour:
   _animator: {fileID: 710053980}
   flashNewsManager: {fileID: 406430490}
   timing: 4
+--- !u!114 &710053985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710053979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2c6d64feeba6b45bab63489581658d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &711000374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3803,6 +3816,7 @@ GameObject:
   - component: {fileID: 1357490571}
   - component: {fileID: 1357490574}
   - component: {fileID: 1357490573}
+  - component: {fileID: 1357490575}
   m_Layer: 0
   m_Name: SYNthe_0
   m_TagString: Untagged
@@ -3833,7 +3847,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 5dad7bc284931784ba5906409fd26713, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3854,12 +3868,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 21
-  m_Sprite: {fileID: -873085363531710462, guid: 408f95a9fec0baa42aa7d235b8c32500, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 408f95a9fec0baa42aa7d235b8c32500, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.58, y: 4.9}
+  m_Size: {x: 7.28, y: 6.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3930,14 +3944,26 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.58, y: 4.9}
-    newSize: {x: 6.58, y: 4.9}
+    oldSize: {x: 7.28, y: 6.16}
+    newSize: {x: 7.28, y: 6.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 6.58, y: 4.9}
   m_EdgeRadius: 0
+--- !u!114 &1357490575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357490570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2c6d64feeba6b45bab63489581658d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1383660794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4795,7 +4821,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 661510267}
   m_HandleRect: {fileID: 661510266}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5028,6 +5054,7 @@ GameObject:
   - component: {fileID: 1955070340}
   - component: {fileID: 1955070343}
   - component: {fileID: 1955070342}
+  - component: {fileID: 1955070344}
   m_Layer: 0
   m_Name: TYPEWRITER_0
   m_TagString: Untagged
@@ -5058,7 +5085,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 5dad7bc284931784ba5906409fd26713, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5079,12 +5106,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 22
-  m_Sprite: {fileID: 1289049302354069582, guid: a656c15cc5f2d3b40963cfd52bb04beb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a656c15cc5f2d3b40963cfd52bb04beb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.34, y: 5.86}
+  m_Size: {x: 5.52, y: 6.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5143,8 +5170,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.34, y: 5.86}
-    newSize: {x: 4.34, y: 5.86}
+    oldSize: {x: 5.52, y: 6.96}
+    newSize: {x: 5.52, y: 6.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -5161,6 +5188,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b61077380c41f446ae767615f7c72e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1955070344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955070339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2c6d64feeba6b45bab63489581658d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1971947593

@@ -19,7 +19,7 @@ public class GameOverManager : MonoBehaviour
         gameOverPanel.SetActive(true);
         scoreText.text = $"Your Satisfiability Score: {score:F1}%";
 
-        if (score <= 0)
+        if (score == 0)
         {
             messageText.text = "The crowd RIOTED !";
         }
