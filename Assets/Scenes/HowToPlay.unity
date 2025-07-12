@@ -727,7 +727,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Have 30 Seconds to Play As Much games and perform For you crowd!
+  m_text: You Have 60 Seconds to Play As Much games and perform For you crowd!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 48f7f0087cd139e44b48668a56a71ab3, type: 2}
   m_sharedMaterial: {fileID: 2622839050161477150, guid: 48f7f0087cd139e44b48668a56a71ab3, type: 2}
@@ -1569,7 +1569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:30
+  m_text: 01:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 48f7f0087cd139e44b48668a56a71ab3, type: 2}
   m_sharedMaterial: {fileID: 2622839050161477150, guid: 48f7f0087cd139e44b48668a56a71ab3, type: 2}
@@ -2552,7 +2552,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: '3. Pick the right Track (The trendy music) AND move your mouse up and
-    down and "Right click" to catch beats '
+    down and "Left click" to catch beats '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 48f7f0087cd139e44b48668a56a71ab3, type: 2}
   m_sharedMaterial: {fileID: 2622839050161477150, guid: 48f7f0087cd139e44b48668a56a71ab3, type: 2}

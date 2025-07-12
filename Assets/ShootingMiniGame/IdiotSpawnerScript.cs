@@ -30,6 +30,6 @@ public class IdiotSpawnerScript : MonoBehaviour
 
     void ResetTimer()
     {
-        timeToSpawn = Random.Range(0f,1f); // Temps aléatoire entre 1 et 3 secondes
+        timeToSpawn = Random.Range(0.2f,1f); // Temps aléatoire entre 1 et 3 secondes
     }
 }
