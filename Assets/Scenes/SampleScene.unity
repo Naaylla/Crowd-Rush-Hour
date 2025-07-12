@@ -3171,7 +3171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:45
+  m_text: 01:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 694fbcca2c594964fbaef59de068b856, type: 2}
   m_sharedMaterial: {fileID: -7943100436380517996, guid: 694fbcca2c594964fbaef59de068b856, type: 2}
@@ -4423,7 +4423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameSatisfaction: 100
-  timeRemain: 45
+  timeRemain: 60
   satisfactionDecreaseSpeed: 2.5
   transitionAnimator: {fileID: 949115659}
   Hobbies:
