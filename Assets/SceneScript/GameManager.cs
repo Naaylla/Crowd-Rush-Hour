@@ -11,12 +11,17 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public bool hadBeenDiverted = false;
     public float currentGameSatisfaction = 100f;
     [NonSerialized] public string playedActivite;
-    [NonSerialized] public float timeRemain = 30f;
+    [SerializeField] public float timeRemain = 45f;
     [NonSerialized] public string selectedType;
+
+    public float satisfactionDecreaseSpeed = 3.2f;
 
     [SerializeField] Animator transitionAnimator;
 
-    public string[] Hobbies = { "music", "cooking", "painting", "writing"};
+    public string[] Hobbies = { "music", "writing", "cooking", "painting" };
+
+    public string lovedHobbie;
+    public string hatedHobbie;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -25,6 +30,17 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            int lovdHobbieIndex = UnityEngine.Random.Range(0, 3);
+            int hatdHobbieIndex = UnityEngine.Random.Range(0, 3);
+            while (lovdHobbieIndex == hatdHobbieIndex)
+            {
+                hatdHobbieIndex = UnityEngine.Random.Range(0, 3);
+            }
+
+            lovedHobbie = Hobbies[lovdHobbieIndex];
+            hatedHobbie = Hobbies[hatdHobbieIndex];
+
         }
         else
         {
@@ -32,7 +48,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    private void Update()
+    {
+        if (currentGameSatisfaction > 0f)
+        {
+            currentGameSatisfaction -= Time.deltaTime * satisfactionDecreaseSpeed;
+            currentGameSatisfaction = Mathf.Clamp(currentGameSatisfaction, 0f, 100f);
+        }
+
+        if (timeRemain > 0f)
+        {
+            timeRemain -= Time.deltaTime;
+            timeRemain = Mathf.Clamp(timeRemain, 0f, 999f); // met une limite haute si besoin
+        }
+
+        Debug.Log("lovedHobbie : " + lovedHobbie);
+        Debug.Log("hatedHobbie : " + hatedHobbie);
+
+    }
+
     public void NextLevel()
     {
         StartCoroutine(LoadLevel());

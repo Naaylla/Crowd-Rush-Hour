@@ -8,10 +8,13 @@ public class PlayerScript : MonoBehaviour
     public int counter = 0;
     public AudioSource As;
     public TMP_Text score;
+    private int addingToSatisBar = 2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         counter = 0;
+        if (GameManager.instance.lovedHobbie == "music") addingToSatisBar = 3;
+        if (GameManager.instance.hatedHobbie == "music") addingToSatisBar = 1;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -44,12 +47,13 @@ public class PlayerScript : MonoBehaviour
 
             counter++;
             As.Play();
+            GameManager.instance.currentGameSatisfaction = GameManager.instance.currentGameSatisfaction + addingToSatisBar; 
             Debug.Log(counter);
 
         }
         if (GameManager.instance != null)
         {
-            GameManager.instance.scoreMiniGame = counter;
+            //GameManager.instance.scoreMiniGame = counter;
 
         }
         else

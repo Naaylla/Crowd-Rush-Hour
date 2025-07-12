@@ -9,57 +9,70 @@ public class FakeTwitchChat : MonoBehaviour
     public float minDelay = 0.5f;
     public float maxDelay = 2f;
 
-    private string[] chatMessages = new string[]
+    private float currentSatis;
+
+    // Messages à définir
+    private string[] positiveMsg = new string[]
     {
-        "Nayla: W's in the chaat",
-        "Yacine: W",
-        "Kenpa: W",
-        "Nana: W",
-        "Yacine: Im coding",
-        "Kenpa: same",
-        "Nana: send help",
-        "Nayla: same fr",
-        "Nayla: W's in the chaat",
-        "Yacine: W",
-        "Kenpa: W",
-        "Nana: W",
-        "Yacine: Im coding",
-        "Kenpa: same",
-        "Nana: send help",
-        "Nayla: same fr",
-        "Nayla: W's in the chaat",
-        "Yacine: W",
-        "Kenpa: W",
-        "Nana: W",
-        "Yacine: Im coding",
-        "Kenpa: same",
-        "Nana: send help",
-        "Nayla: same fr"
+    "Loving it!",
+    "More of this please!",
+    "Haha that was funny!",
+    "Such a cool moment!",
+    "Loving it!",
+    "More of this please!",
+    "Haha that was funny!",
+    "Such a cool moment!",
+    "Loving it!",
+    "More of this please!"
+    };
+
+    private string[] negativeMsg = new string[]
+    {
+    "Boring...",
+    "What's happening?",
+    "This sucks.",
+    "I'm leaving.",
+    "Worst game ever.",
+    "Boring...",
+    "What's happening?",
+    "This sucks.",
+    "I'm leaving.",
+    "Worst game ever."
     };
 
     void Start()
     {
+        currentSatis = GameManager.instance.currentGameSatisfaction;
         StartCoroutine(SpawnChat());
     }
 
+    void Update()
+    {
+        currentSatis = GameManager.instance.currentGameSatisfaction;
+    }
 
-    // THIS IS RANDOM GENERATING
+    IEnumerator SpawnChat()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
 
+            GameObject msg = Instantiate(chatMessagePrefab, chatContent);
+            TMP_Text text = msg.GetComponent<TMP_Text>();
 
-    // IEnumerator SpawnChat()
-    // {
-    //     while (true)
-    //     {
-    //         yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
-    //         GameObject msg = Instantiate(chatMessagePrefab, chatContent);
-    //         TMP_Text text = msg.GetComponent<TMP_Text>();
-    //         text.text = chatMessages[Random.Range(0, chatMessages.Length)];
-    //     }
-    // }
+            float satisfactionRatio = Mathf.Clamp01(currentSatis / 100f); // entre 0 et 1
+
+            // Tirage aléatoire : si satisfaction haute, + de chances de msg positifs
+            bool isPositive = Random.value < satisfactionRatio;
+            int randomSpec = Random.Range(1, 20);
+            string[] sourceArray = isPositive ? (positiveMsg) : negativeMsg;
+            text.text = "Spec #"+ randomSpec.ToString()+ " : " + sourceArray[Random.Range(0, sourceArray.Length)];
+        }
+    }
 
 
     // THIS IS ONE BY ONE
-    IEnumerator SpawnChat()
+    /*IEnumerator SpawnChat()
 {
     for (int i = 0; i < chatMessages.Length; i++)
     {
@@ -69,6 +82,7 @@ public class FakeTwitchChat : MonoBehaviour
 
         yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
     }
+    */
 }
 
-}
+

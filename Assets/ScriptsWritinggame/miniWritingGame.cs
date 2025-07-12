@@ -12,29 +12,32 @@ public class TextCompletionGame : MonoBehaviour
     "Did you know that studying at USTHB is a foretaste of war?",
     };
     [SerializeField] string fullText;
-    [SerializeField] Vector2Int[] hiddenWordRanges = { new Vector2Int(6, 20) }; // exemple : "puissant"
+    [SerializeField] Vector2Int hiddenWordRanges = new Vector2Int(7, 20); 
     [SerializeField] float timeLimit = 30f;
 
     [SerializeField] AudioSource tapingKey;
 
-    string displayText;
     float timer;
     int revealIndex = 0;
     char[] currentChars;
+    int addingToSatis = 1;
 
     void Start()
     {
+        if (GameManager.instance.lovedHobbie == GameManager.instance.Hobbies[1]) addingToSatis = 2;
+        if (GameManager.instance.hatedHobbie == GameManager.instance.Hobbies[1]) addingToSatis = 0;
         int randNum = UnityEngine.Random.Range(0, nbrOfSentences);
         fullText = AllPhrase[randNum];
         timer = timeLimit;
         // Prépare currentChars
         currentChars = fullText.ToCharArray();
         // Applique le masque alpha aux mots cachés
-        foreach (var range in hiddenWordRanges)
-        {
-            for (int i = range.x; i < range.y; i++)
+        hiddenWordRanges = new Vector2Int(UnityEngine.Random.Range(0, 10), UnityEngine.Random.Range(20, 30));
+
+        for (int i = hiddenWordRanges.x; i < hiddenWordRanges.y; i++)
+            if (fullText[i] != ' ')
                 currentChars[i] = '\0'; // on marque pour cacher
-        }
+
         UpdateDisplayText();
     }
 
@@ -72,22 +75,30 @@ public class TextCompletionGame : MonoBehaviour
 
     void TryRevealLetter(char inputChar)
     {
-        // Trouve le prochain caractère caché et compare
         for (int i = revealIndex; i < fullText.Length; i++)
         {
-            if (currentChars[i] != '\0') continue;
+            if (currentChars[i] != '\0') continue; // déjà révélé
+
+            // saute les espaces automatiquement
+            if (fullText[i] == ' ')
+            {
+                currentChars[i] = ' ';
+                revealIndex = i + 1;
+                continue;
+            }
+
             if (char.ToLower(inputChar) == char.ToLower(fullText[i]))
             {
-                // On révèle ce caractère
                 currentChars[i] = fullText[i];
                 revealIndex = i + 1;
+                GameManager.instance.currentGameSatisfaction += addingToSatis;
                 UpdateDisplayText();
                 CheckVictory();
             }
-            // si faux, on peut pénaliser ou ignorer
             break;
         }
     }
+
 
     void CheckVictory()
     {
