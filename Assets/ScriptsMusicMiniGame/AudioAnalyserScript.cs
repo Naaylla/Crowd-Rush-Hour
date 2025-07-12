@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class AudioPitchAnalyser : MonoBehaviour
 {
-    const float maxHeight = 4.0f;
 
     public AudioSource[] audioSources;
     private AudioSource aS;
@@ -10,21 +9,17 @@ public class AudioPitchAnalyser : MonoBehaviour
     public int numberOfNotes = 10;
     public float noteSpacing = 0.5f;
 
-    private float[] spectrum = new float[1024];
     private int currentNoteIndex = 0;
-    private float timer = 0f;
-    private float lastYPos = 0f;
+    private float timer = 10f;
+
 
     // Plage de fréquences et hauteur d'écran
-    private float minFreq = 80f;
-    private float minY = -maxHeight; 
-    private float maxY;
+
 
     
     void Start()
     {
         // Calcule la hauteur d'écran (pour caméra orthographique)
-        maxY = maxHeight;
         int num = 0;
         if (GameManager.instance.selectedType == "jazz") num = 0;
         if (GameManager.instance.selectedType == "rock") num = 1;
@@ -36,22 +31,25 @@ public class AudioPitchAnalyser : MonoBehaviour
 
     void Update()
     {
-        if (currentNoteIndex >= numberOfNotes) return;
-
-        timer += Time.deltaTime;
-        if (timer >= noteSpacing)
+        if (currentNoteIndex < numberOfNotes)
         {
-            timer = 0f;
-            SpawnNoteBasedOnPitch();
-            currentNoteIndex++;
+            timer += Time.deltaTime;
+            if (timer >= noteSpacing)
+            {
+                timer = 0f;
+                SpawnNoteBasedOnPitch();
+                currentNoteIndex++;
+            }
         }
+
+
     }
     
 
     void SpawnNoteBasedOnPitch()
     {
 
-        float yPos = Random.Range(-4.13f, 4.13f);
+        float yPos = Random.Range(-4.13f,4.13f);
         // Spawn la note
         Vector3 notePos = new Vector3(currentNoteIndex * 1.5f, yPos, 0);
         Instantiate(notePrefab, notePos, Quaternion.identity);

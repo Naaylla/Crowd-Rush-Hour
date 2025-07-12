@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 20440425}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.28, y: -1.5, z: 0}
+  m_LocalPosition: {x: 2.95, y: -1.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1785,7 +1785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
+  m_HorizontalFit: 2
   m_VerticalFit: 2
 --- !u!114 &648535595
 MonoBehaviour:
@@ -1805,7 +1805,7 @@ MonoBehaviour:
     m_Top: 4
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 2
+  m_Spacing: 5
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -3171,7 +3171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:30
+  m_text: 00:45
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 694fbcca2c594964fbaef59de068b856, type: 2}
   m_sharedMaterial: {fileID: -7943100436380517996, guid: 694fbcca2c594964fbaef59de068b856, type: 2}
@@ -3262,7 +3262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2b9865935a19f45ad2edc8335e8495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 30
+  timeRemaining: 45
   timerIsRunning: 1
   timeText: {fileID: 1149438424}
   audioSource: {fileID: 1149438427}
@@ -4406,12 +4406,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameSatisfaction: 100
+  timeRemain: 45
   satisfactionDecreaseSpeed: 2.5
   transitionAnimator: {fileID: 949115659}
   Hobbies:
   - music
   - cooking
   - painting
+  lovedHobbie: 
+  hatedHobbie: 
 --- !u!4 &1620215078
 Transform:
   m_ObjectHideFlags: 0
@@ -4545,7 +4548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56227060e72a5e468e0df363ca72afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeImpactMultiplication: 2.5
+  timeImpactMultiplication: 3
   spectatorPrefab:
   - {fileID: 7472534669843222459, guid: 2f70681129720a44ca58306d5bfc6514, type: 3}
   - {fileID: 3229450368372048499, guid: 727a2de08f74db640a7eedff736351d1, type: 3}
@@ -4715,7 +4718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.0999985, y: 3}
+  m_AnchoredPosition: {x: 22.559998, y: 3}
   m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1852124880

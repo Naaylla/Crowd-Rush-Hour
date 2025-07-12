@@ -96,7 +96,7 @@ public class CrowdScript : MonoBehaviour
     void UpdateSpectators()
     {
         // Calcule combien doit y avoir de spectateurs actifs
-        if (diverted)
+        /*if (diverted)
         {
             Debug.Log(currentSatisfaction);
             if (lovedHobbie == GameManager.instance.playedActivite)
@@ -119,6 +119,7 @@ public class CrowdScript : MonoBehaviour
             diverted = false;
 
         }
+        */
         int total = spectators.Count;
         float ratio = currentSatisfaction / maxSatisfaction;      // entre 0 et 1
         int toShow = Mathf.RoundToInt(ratio * total);

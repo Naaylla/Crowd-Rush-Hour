@@ -10,6 +10,7 @@ public class GameLogicScript : MonoBehaviour
     void Start()
     {
         GameManager.instance.hadBeenDiverted = true;
+        GameManager.instance.timeRemain += 12;
         GameManager.instance.playedActivite = GameManager.instance.Hobbies[0]; 
     }
 

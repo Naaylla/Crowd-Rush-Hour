@@ -11,17 +11,17 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public bool hadBeenDiverted = false;
     public float currentGameSatisfaction = 100f;
     [NonSerialized] public string playedActivite;
-    [NonSerialized] public float timeRemain = 30f;
+    [SerializeField] public float timeRemain = 45f;
     [NonSerialized] public string selectedType;
 
     public float satisfactionDecreaseSpeed = 3.2f;
 
     [SerializeField] Animator transitionAnimator;
 
-    public string[] Hobbies = { "music", "cooking", "painting", "writing"};
+    public string[] Hobbies = { "music", "writing", "cooking", "painting" };
 
-    private string lovedHobbie;
-    private string hatedHobbie;
+    public string lovedHobbie;
+    public string hatedHobbie;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -61,6 +61,9 @@ public class GameManager : MonoBehaviour
             timeRemain -= Time.deltaTime;
             timeRemain = Mathf.Clamp(timeRemain, 0f, 999f); // met une limite haute si besoin
         }
+
+        Debug.Log("lovedHobbie : " + lovedHobbie);
+        Debug.Log("hatedHobbie : " + hatedHobbie);
 
     }
 
