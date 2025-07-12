@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/quizz.unity
     guid: 324c9cdb57c0f9b45aa51d2e96aae98a
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 93f14861c83208048a9a5cd9318968fd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

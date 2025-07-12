@@ -1,27 +1,29 @@
 using UnityEngine;
-using System.Collections;
 
-public class InteractionDetection : MonoBehaviour
+public class TVClickTrigger : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
-    [SerializeField] private GameObject flashNewsManager;
-    [SerializeField] float timing = 4f;
+    public TVDialogueManager dialogueManager;
+
+    [TextArea(2, 5)]
+    public string[] dialogueLines = {
+        "BREAKING NEWS!",
+        "The crowd is going wild...",
+        "More chaos coming up next!"
+    };
+
+    private bool triggered = false;
 
     void Update()
     {
+        if (triggered) return;
+
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
         if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            flashNewsManager.SetActive(true);
-            StartCoroutine(ReappearAfterDelay(timing)); // Lance une coroutine qui le réactive après 5 secondes
+            dialogueManager.StartDialogue(dialogueLines);
+            triggered = true;
         }
-    }
-
-    private IEnumerator ReappearAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        flashNewsManager.SetActive(false);
     }
 }

@@ -11,13 +11,13 @@ public class FakeTwitchChat : MonoBehaviour
 
     private float currentSatis;
 
-    // Messages à définir
+    // Messages ï¿½ dï¿½finir
     private string[] positiveMsg = new string[]
     {
-    "Loving it!",
-    "More of this please!",
-    "Haha that was funny!",
-    "Such a cool moment!",
+    "Someone play 'Fly Me to the Moon' or Iâ€™m leaving.",
+    "Frank Sinatra would've loved this sax solo!",
+    "JAZZ ISNâ€™T DEAD, YOU ARE!!",
+    "10/10 WOULD BRAINROT TO THIS AGAIN!",
     "Loving it!",
     "More of this please!",
     "Haha that was funny!",
@@ -62,7 +62,7 @@ public class FakeTwitchChat : MonoBehaviour
 
             float satisfactionRatio = Mathf.Clamp01(currentSatis / 100f); // entre 0 et 1
 
-            // Tirage aléatoire : si satisfaction haute, + de chances de msg positifs
+            // Tirage alï¿½atoire : si satisfaction haute, + de chances de msg positifs
             bool isPositive = Random.value < satisfactionRatio;
             int randomSpec = Random.Range(1, 20);
             string[] sourceArray = isPositive ? (positiveMsg) : negativeMsg;

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public bool hadBeenDiverted = false;
     public float currentGameSatisfaction = 100f;
     [NonSerialized] public string playedActivite;
-    [SerializeField] public float timeRemain = 45f;
+    [SerializeField] public float timeRemain = 10f;
     [NonSerialized] public string selectedType;
 
     public float satisfactionDecreaseSpeed = 3.2f;
@@ -60,6 +60,11 @@ public class GameManager : MonoBehaviour
         {
             timeRemain -= Time.deltaTime;
             timeRemain = Mathf.Clamp(timeRemain, 0f, 999f); // met une limite haute si besoin
+        }
+
+        if (timeRemain == 0)
+        {
+            SceneManager.LoadScene("GameOver");
         }
 
         Debug.Log("lovedHobbie : " + lovedHobbie);
