@@ -1770,7 +1770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0008750819, y: -0.000015243468}
+  m_AnchoredPosition: {x: 0.00034549658, y: -0.000015243468}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &648535594
@@ -4021,6 +4021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1384513012}
+  - component: {fileID: 1384513013}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -4036,14 +4037,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384513011}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07097, y: -1.20235, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.53892, y: -0.72038, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1341511996}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1620215078}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1384513013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384513011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5faf3312cda55d4594fd12f5bdf020c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RectTimer: {fileID: 1149438423}
+  positionSceneMenu: {x: 126, y: 194}
+  positionSceneMiniJeu: {x: 330, y: -194}
+  positionSceneFinale: {x: 330, y: -194}
 --- !u!1 &1446146788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4430,6 +4447,7 @@ Transform:
   m_Children:
   - {fileID: 949115660}
   - {fileID: 711000376}
+  - {fileID: 1384513012}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683161332
@@ -4764,7 +4782,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 661510267}
   m_HandleRect: {fileID: 661510266}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5268,6 +5286,5 @@ SceneRoots:
   - {fileID: 710053982}
   - {fileID: 406430492}
   - {fileID: 1186921203}
-  - {fileID: 1384513012}
   - {fileID: 730541541}
   - {fileID: 1223692113}

@@ -64,7 +64,7 @@ public class FakeTwitchChat : MonoBehaviour
 
             // Tirage aléatoire : si satisfaction haute, + de chances de msg positifs
             bool isPositive = Random.value < satisfactionRatio;
-            int randomSpec = Random.Range(0, 20);
+            int randomSpec = Random.Range(1, 20);
             string[] sourceArray = isPositive ? (positiveMsg) : negativeMsg;
             text.text = "Spec #"+ randomSpec.ToString()+ " : " + sourceArray[Random.Range(0, sourceArray.Length)];
         }
