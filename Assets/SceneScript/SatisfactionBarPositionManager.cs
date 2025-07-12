@@ -10,7 +10,8 @@ public class SatisfactionBarPositionManager : MonoBehaviour
     public Vector2 positionSceneMenu = new Vector2(0,0);
     public Vector2 positionSceneMiniJeu = new Vector2(0, 0);
     public Vector2 positionSceneFinale = new Vector2(0, 0);
-
+    public Vector2 positionSceneGameOver = new Vector2(0, 0);
+    
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -35,6 +36,8 @@ public class SatisfactionBarPositionManager : MonoBehaviour
             barTransform.anchoredPosition = positionSceneMiniJeu;
         else if (sceneName == "miniGameWriting")
             barTransform.anchoredPosition = positionSceneFinale;
+        else if (sceneName == "GameOver")
+            barTransform.anchoredPosition= positionSceneGameOver;
         // Ajoute autant de cas que nécessaire
     }
 }

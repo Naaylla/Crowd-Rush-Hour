@@ -19,6 +19,13 @@ public class TimerScript : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.instance.isReseted)
+        {
+            
+            Debug.Log("time remaingigg rg  : " + timeRemaining);
+            timerIsRunning = true;
+        }
+        
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
@@ -37,15 +44,15 @@ public class TimerScript : MonoBehaviour
             else
             {
                 Debug.Log("Temps écoulé !");
-                timeRemaining = 0;
+                timeRemaining = 0f;
                 timerIsRunning = false;
+                DisplayTime(30);
             }
         }
     }
 
     void DisplayTime(float timeToDisplay)
     {
-        timeToDisplay += 1;
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);

@@ -2288,6 +2288,7 @@ MonoBehaviour:
   positionSceneMenu: {x: -822, y: 455}
   positionSceneMiniJeu: {x: -0.02, y: 480}
   positionSceneFinale: {x: -600, y: 480}
+  positionSceneGameOver: {x: 0, y: 1500}
 --- !u!1 &730541538
 GameObject:
   m_ObjectHideFlags: 0
@@ -3679,6 +3680,7 @@ GameObject:
   - component: {fileID: 1269755212}
   - component: {fileID: 1269755211}
   - component: {fileID: 1269755213}
+  - component: {fileID: 1269755214}
   m_Layer: 0
   m_Name: slingshot_0
   m_TagString: Untagged
@@ -3814,6 +3816,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 7.39, y: 10.8}
   m_EdgeRadius: 0
+--- !u!114 &1269755214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269755209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a115ea77a826446b736e432de09516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1279334707
 GameObject:
   m_ObjectHideFlags: 0
@@ -4477,6 +4491,7 @@ MonoBehaviour:
   positionSceneMenu: {x: 126, y: 194}
   positionSceneMiniJeu: {x: 330, y: -194}
   positionSceneFinale: {x: 330, y: -194}
+  positionSceneGameOver: {x: 0, y: 1500}
 --- !u!1 &1446146788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,7 +4990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameSatisfaction: 100
-  timeRemain: 30
+  timeRemain: 4
   satisfactionDecreaseSpeed: 2.5
   transitionAnimator: {fileID: 949115659}
   Hobbies:
@@ -4984,6 +4999,7 @@ MonoBehaviour:
   - painting
   lovedHobbie: 
   hatedHobbie: 
+  isReseted: 0
 --- !u!4 &1620215078
 Transform:
   m_ObjectHideFlags: 0
