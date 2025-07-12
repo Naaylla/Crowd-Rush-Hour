@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class SlingshootScript : MonoBehaviour
 {
+    public GameObject TV;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -16,7 +17,8 @@ public class SlingshootScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("shootMiniGame");
+            if (!TV.activeInHierarchy)
+                UnityEngine.SceneManagement.SceneManager.LoadScene("shootMiniGame");
         }
     }
 }

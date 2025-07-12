@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MicScrpit : MonoBehaviour
 {
+    public GameObject TV;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,7 +18,9 @@ public class MicScrpit : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.gameObject == gameObject)
         {
+            if (!TV.activeInHierarchy)
             UnityEngine.SceneManagement.SceneManager.LoadScene("quizz");
         }
     }
+    
 }

@@ -645,6 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8a11190efdc054e88ec5e5883455b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TV: {fileID: 406430490}
 --- !u!61 &281960334
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3249,7 +3250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:45
+  m_text: 01:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 694fbcca2c594964fbaef59de068b856, type: 2}
   m_sharedMaterial: {fileID: -7943100436380517996, guid: 694fbcca2c594964fbaef59de068b856, type: 2}
@@ -3340,7 +3341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2b9865935a19f45ad2edc8335e8495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 5
+  timeRemaining: 60
   timerIsRunning: 1
   timeText: {fileID: 1149438424}
   audioSource: {fileID: 1149438427}
@@ -3828,6 +3829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a115ea77a826446b736e432de09516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TV: {fileID: 406430490}
 --- !u!1 &1279334707
 GameObject:
   m_ObjectHideFlags: 0
@@ -4297,6 +4299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73c12173c7c9bf478d413577002c2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TV: {fileID: 406430490}
 --- !u!61 &1357490574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4990,7 +4993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameSatisfaction: 100
-  timeRemain: 15
+  timeRemain: 60
   gameEnd: 0
   satisfactionDecreaseSpeed: 2.5
   transitionAnimator: {fileID: 949115659}
@@ -5264,7 +5267,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 661510267}
   m_HandleRect: {fileID: 661510266}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5633,6 +5636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b61077380c41f446ae767615f7c72e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TV: {fileID: 406430490}
 --- !u!114 &1955070344
 MonoBehaviour:
   m_ObjectHideFlags: 0

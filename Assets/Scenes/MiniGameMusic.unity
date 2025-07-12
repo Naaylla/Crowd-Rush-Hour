@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9a782a1960cd94d87203515ad5b4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heart: {fileID: -8357195674108743940, guid: 5ff4de440b1c7114da01fa6a5018947c, type: 3}
+  heart: {fileID: 21300000, guid: 5ff4de440b1c7114da01fa6a5018947c, type: 3}
   pv: 3
   heartContainer: {fileID: 2051100958}
   heartPrefab: {fileID: 7017697588872533094, guid: 67c4fa8c02863fb41b578ea1439a4ffb, type: 3}
@@ -1443,7 +1443,6 @@ MonoBehaviour:
   - {fileID: 1111563913}
   - {fileID: 1111563916}
   - {fileID: 1111563915}
-  aS: {fileID: 0}
   notePrefab: {fileID: 7467364963545013056, guid: c57f541e51f7b724ea2c6341cf174fe8, type: 3}
   numberOfNotes: 30
   noteSpacing: 0.5

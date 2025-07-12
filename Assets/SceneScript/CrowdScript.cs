@@ -50,8 +50,8 @@ public class CrowdScript : MonoBehaviour
         }
 
         
-        lovedHobbie = GameManager.instance.Hobbies[lovdHobbie];
-        hatedHobbie = GameManager.instance.Hobbies[hatdHobbie];
+        lovedHobbie = GameManager.instance.Hobbies[0];
+        hatedHobbie = GameManager.instance.Hobbies[1];
 
         int randomNum;
         

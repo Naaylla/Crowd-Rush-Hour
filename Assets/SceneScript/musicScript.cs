@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class musicScript : MonoBehaviour
 {
+    public GameObject TV;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,7 +17,8 @@ public class musicScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MusicIntervelScene");
+            if (!TV.activeInHierarchy)
+                UnityEngine.SceneManagement.SceneManager.LoadScene("MusicIntervelScene");
         }
     }
 }

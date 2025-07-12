@@ -36,6 +36,7 @@ public class TutorialNavigator : MonoBehaviour
         if (currentPageIndex < tutorialPages.Count - 1)
         {
             currentPageIndex++;
+            backButton.interactable = true;
             ShowPage(currentPageIndex);
         }
     }
@@ -44,11 +45,13 @@ public class TutorialNavigator : MonoBehaviour
     {
         if (currentPageIndex == 0)
         {
-            SceneManager.LoadScene(targetSceneName);
+
+            backButton.interactable = false;
         }
         else
         {
             currentPageIndex--;
+
             ShowPage(currentPageIndex);
         }
     }

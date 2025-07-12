@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WritingScript : MonoBehaviour
 {
+    public GameObject TV;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +17,7 @@ public class WritingScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.gameObject == gameObject)
         {
+            if (!TV.activeInHierarchy)
             UnityEngine.SceneManagement.SceneManager.LoadScene("miniGameWriting");
         }
     }

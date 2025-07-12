@@ -42,7 +42,7 @@ public class TimerScript : MonoBehaviour
                 Debug.Log("Temps écoulé !");
                 timeRemaining = 0f;
                 timerIsRunning = false;
-                DisplayTime(30);
+                DisplayTime(60);
             }
         }
     }

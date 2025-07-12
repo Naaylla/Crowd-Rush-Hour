@@ -17,11 +17,6 @@ public class GameLogicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Debug.Log("return to normal scene");
-            SceneManager.LoadScene("SampleScene");
-        }
 
         
     }

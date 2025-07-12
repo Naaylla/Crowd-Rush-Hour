@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
         playedActivite = "";
         selectedType = "";
 
-        timeRemain = 30f;
+        timeRemain = 60f;
 
         // Ajoute cette ligne pour synchroniser le TimerScript
         TimerScript timerScript = FindObjectOfType<TimerScript>();

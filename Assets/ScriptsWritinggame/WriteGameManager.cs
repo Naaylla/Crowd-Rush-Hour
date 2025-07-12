@@ -14,12 +14,6 @@ public class WriteGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Debug.Log("return to normal scene");
-            GameManager.instance.scoreMiniGame = 5;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
-        }
         if (uiText.text == "Win")
         {
             GameManager.instance.scoreMiniGame = 30;

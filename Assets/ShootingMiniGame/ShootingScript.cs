@@ -19,7 +19,9 @@ public class ShootingScript : MonoBehaviour
             {
                 
                 As[random].Play();
-                Destroy(hit.collider.gameObject); // Supprime l'idiot
+                Destroy(hit.collider.gameObject);
+                GameManager.instance.currentGameSatisfaction += 2;
+                // Supprime l'idiot
                 // Ajoute un son ou un effet ici si tu veux
             }
         }
