@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LEDIMON9_0: 996956648928509489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

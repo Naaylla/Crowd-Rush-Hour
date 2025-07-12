@@ -9,11 +9,15 @@ public class AnswerButton : MonoBehaviour
     {
         if (isCorrect)
         {
+            GameManager.instance.currentGameSatisfaction += 10;
             gameManager.correctAnswer();
+           
         }
         else
         {
+            GameManager.instance.currentGameSatisfaction -= 10;
             gameManager.wrongAnswer();
+            
         }
     }
 }

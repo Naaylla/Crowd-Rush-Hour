@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      quiz_mini_game_0: -7834261877139933595
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -90,6 +90,8 @@ public class DialogueManager : MonoBehaviour
             dialogueEnded = true;
             timerObject.SetActive(true);
             StartCoroutine(CountdownThenStartGame());
+
+
         }
     }
 

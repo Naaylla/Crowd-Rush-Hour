@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
             lovedHobbie = Hobbies[lovdHobbieIndex];
             hatedHobbie = Hobbies[hatdHobbieIndex];
-
+            ResetGame();
 
 
         }
@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
 
     void OnEnable()
     {
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -106,7 +107,7 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "SampleScene")
+        if (scene.name == "BugTimerDeMerde")
         {
             ResetGame();
         }

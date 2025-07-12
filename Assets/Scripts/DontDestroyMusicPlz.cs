@@ -11,7 +11,6 @@ public class MusicManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         instance = this;
         DontDestroyOnLoad(gameObject);
     }

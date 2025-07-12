@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c52097d0bbbfa8b4ea10d50854e294a1
+guid: 2a6f18b0287ed634b84799d0af774364
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 924877652934875549
-    second: LEDIMON6_0
+      213: 5111763290514371741
+    second: glitch_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LEDIMON6_0
+      name: glitch_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1440
-        height: 776
+        width: 894
+        height: 490
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9951eb3353d5dc00800000000000000
-      internalID: 924877652934875549
+      spriteID: d94bdf221a1a0f640800000000000000
+      internalID: 5111763290514371741
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      LEDIMON6_0: 924877652934875549
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
