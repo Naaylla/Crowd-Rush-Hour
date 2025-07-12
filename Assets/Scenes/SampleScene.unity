@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 281960331}
   - component: {fileID: 281960334}
   - component: {fileID: 281960333}
+  - component: {fileID: 281960335}
   m_Layer: 0
   m_Name: MICROOOOOOOO_0
   m_TagString: Untagged
@@ -584,7 +585,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 5dad7bc284931784ba5906409fd26713, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -605,12 +606,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 21
-  m_Sprite: {fileID: -598530802788147325, guid: 599541435b643f448a43eac6b9a4d1a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 599541435b643f448a43eac6b9a4d1a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.26, y: 7.62}
+  m_Size: {x: 3.6, y: 8.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -681,14 +682,26 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.26, y: 7.62}
-    newSize: {x: 2.26, y: 7.62}
+    oldSize: {x: 3.6, y: 8.8}
+    newSize: {x: 3.6, y: 8.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 1.75, y: 7.62}
   m_EdgeRadius: 0
+--- !u!114 &281960335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281960330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2c6d64feeba6b45bab63489581658d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &300299698
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public AudioSource typingAudioSource;
+
     public GameObject characterObject; // the visual character
     public GameObject dialogueUI;      // the dialogue UI box/panel
     public GameObject timerObject;     // the TIMER GameObject with the countdown script
@@ -27,7 +28,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (dialogueEnded) return; // Prevent further input after dialogue ends
+        if (dialogueEnded) return;
 
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -37,6 +38,7 @@ public class DialogueManager : MonoBehaviour
                 dialogueText.text = dialogueLines[index];
                 characterAnimator.SetBool("IsTalking", false);
                 isTyping = false;
+                StopTypingSound(); // ✅ stop sound when skipping
             }
             else
             {
@@ -44,36 +46,31 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
-IEnumerator TypeLine()
-{
-    isTyping = true;
-    characterAnimator.SetBool("IsTalking", true);
-    dialogueText.text = "";
 
-    // ✅ START the typing sound
-    if (typingAudioSource != null && typingAudioSource.clip != null)
+    IEnumerator TypeLine()
     {
-        typingAudioSource.loop = true;
-        typingAudioSource.Play();
+        isTyping = true;
+        characterAnimator.SetBool("IsTalking", true);
+        dialogueText.text = "";
+
+        // ✅ Start the typing sound (looping)
+        if (typingAudioSource != null && typingAudioSource.clip != null && !typingAudioSource.isPlaying)
+        {
+            typingAudioSource.loop = true;
+            typingAudioSource.Play();
+        }
+
+        foreach (char c in dialogueLines[index].ToCharArray())
+        {
+            dialogueText.text += c;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        StopTypingSound(); // ✅ stop after typing completes
+
+        characterAnimator.SetBool("IsTalking", false);
+        isTyping = false;
     }
-
-    foreach (char c in dialogueLines[index].ToCharArray())
-    {
-        dialogueText.text += c;
-        yield return new WaitForSeconds(typingSpeed);
-    }
-
-    // ✅ STOP the typing sound
-    if (typingAudioSource != null)
-    {
-        typingAudioSource.Stop();
-    }
-
-    characterAnimator.SetBool("IsTalking", false);
-    isTyping = false;
-}
-
-
 
     void NextLine()
     {
@@ -84,15 +81,24 @@ IEnumerator TypeLine()
         }
         else
         {
-            // Dialogue is finished
+            // Dialogue finished
             dialogueText.text = "";
             characterObject.SetActive(false);
             dialogueUI.SetActive(false);
-            boxObject.SetActive(false); // Hide the box too
+            boxObject.SetActive(false);
 
-            dialogueEnded = true; // Prevent further input
+            dialogueEnded = true;
             timerObject.SetActive(true);
             StartCoroutine(CountdownThenStartGame());
+        }
+    }
+
+    void StopTypingSound()
+    {
+        if (typingAudioSource != null && typingAudioSource.isPlaying)
+        {
+            typingAudioSource.Stop();
+            typingAudioSource.loop = false;
         }
     }
 
@@ -113,12 +119,12 @@ IEnumerator TypeLine()
         while (countdown > 0)
         {
             timerText.text = countdown.ToString();
-            yield return new WaitForSeconds(0.5f); // faster countdown
+            yield return new WaitForSeconds(0.5f);
             countdown--;
         }
 
         timerText.text = "GO!";
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
 
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
